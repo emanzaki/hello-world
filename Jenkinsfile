@@ -1,6 +1,6 @@
 pipeline {
   agent any
-  stagaes {
+  stages {
     stage('build Dockerfile')
     {
       steps {
