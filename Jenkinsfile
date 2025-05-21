@@ -5,22 +5,14 @@ pipeline {
     {
       steps {
         echo 'building your app'
-        sh 'docker build . -t emanzaki/simple-app-with-jenkins:${BUILD_NUMBER}'
+        sh 'docker build . -t emanzaki/simple-app-with-jenkins:$BUILD_NUMBER'
       }
     }
-    stage('login')
+    stage('Login and push')
     {
-      steps {
-        echo 'Login to Docker'
-        sh 'docker login -u $USER -p $PASS'
-      }
-    }
-    stage('push to Dockerhub')
-    {
-      steps {
-        echo 'pushing to docker hub'
-        sh 'docker push emanzaki/simple-app-with-jenkins:${BUILD_NUMBER}'
-      }
+      withCredentials([usernamePassword(credentialsId: 'docker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                    sh "docker push emanzaki/simple-app-with-jenkins:$BUILD_NUMBER"
+                }
     }
   }
 }
