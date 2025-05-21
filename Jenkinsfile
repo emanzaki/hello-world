@@ -5,7 +5,7 @@ pipeline {
     {
       steps {
         echo 'building your app'
-        sh 'docker build -t emanzaki/simple-app-with-jenkins:${BUILD_NUMBER}'
+        sh 'docker build . -t emanzaki/simple-app-with-jenkins:${BUILD_NUMBER}'
       }
     }
     stage('login')
