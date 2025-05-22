@@ -11,9 +11,9 @@ pipeline {
     stage('Login and push')
     {
       steps {
-        
         withCredentials([usernamePassword(credentialsId: 'docker', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                       sh "docker push emanzaki/simple-app-with-jenkins:$BUILD_NUMBER"
+          
                   }
       }
     }
