@@ -19,9 +19,9 @@ pipeline {
             }
         }
 
-        stage('Notify') {
+        stage('webhook') {
             steps {
-                echo 'Sending success notification! 🎉'
+                echo 'Hello from webhook !!'
             }
         }
 
