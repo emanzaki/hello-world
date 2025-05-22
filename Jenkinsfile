@@ -13,23 +13,23 @@ pipeline {
     stages {
         stage('Person') {
             steps {
-                echo 'Person is ${params.PERSON}'
+                echo "Person is ${params.PERSON}"
             }
         }
 
         stage('BIOGRAPHY') {
             steps {
-                echo 'BIOGRAPHY is ${params.BIOGRAPHY}'
+                echo "BIOGRAPHY is ${params.BIOGRAPHY}"
             }
         }
         stage('TOGGLE') {
             steps {
-                echo 'TOGGLE is ${params.TOGGLE}'
+                echo "TOGGLE is ${params.TOGGLE}"
             }
         }
         stage('CHOICE') {
             steps {
-                echo 'CHOICE is ${params.CHOICE}'
+                echo "CHOICE is ${params.CHOICE}"
             }
         }
 
