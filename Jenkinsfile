@@ -11,28 +11,27 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
+        stage('Person') {
             steps {
-                echo 'Building the application...'
+                echo 'Person is ${params.PERSON}'
             }
         }
 
-        stage('Test') {
+        stage('BIOGRAPHY') {
             steps {
-                echo 'Running tests...'
+                echo 'BIOGRAPHY is ${params.BIOGRAPHY}'
+            }
+        }
+        stage('TOGGLE') {
+            steps {
+                echo 'TOGGLE is ${params.TOGGLE}'
+            }
+        }
+        stage('CHOICE') {
+            steps {
+                echo 'CHOICE is ${params.CHOICE}'
             }
         }
 
-        stage('Deploy') {
-            steps {
-                echo 'Deploying to staging...'
-            }
-        }
-
-        stage('Notify') {
-            steps {
-                echo 'Sending success notification! 🎉'
-            }
-        }
     }
 }
